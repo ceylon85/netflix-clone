@@ -13,10 +13,12 @@ const requests = {
   fetchRomanceMovies: `/discover/movie?api_key=${API_KEY}&with_genres=10749`,
   fetchDocumentaries: `/discover/movie?api_key=${API_KEY}&with_genres=99`,
   fetchMysteryMovies: `/discover/movie?api_key=${API_KEY}&with_genres=9648`,
-  fetchHorrorMovies: `/discover/movie?api_key=${API_KEY}&with_genres=27`,
+  fetchHorrorMovies: `/discover/movie?api//_key=${API_KEY}&with_genres=27`,
 };
 
 export default requests;
 
 //Genre_lists API
 //https://api.themoviedb.org/3/genre/movie/list?api_key=ae5cadf3939863eb04cb5826443a89b2
+
+//https://api.themoviedb.org/3/discover/tv?api_key=ae5cadf3939863eb04cb5826443a89b2&with_network=213
