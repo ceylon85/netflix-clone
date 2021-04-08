@@ -31,6 +31,7 @@ function HomeScreen() {
       <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
       <Row title="Animations" fetchUrl={requests.fetchAnimations} />
       <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+    <div className="homeScreen__divide"></div>
     </div>
   );
 }

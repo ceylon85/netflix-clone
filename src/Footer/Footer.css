@@ -1,0 +1,79 @@
+.footer {
+    color: #757575;
+    padding-top: 60px;
+    padding-bottom: 10px;
+    width: 70%;
+    margin: auto;
+    
+    
+}
+.footer__top {
+    padding: 0;
+    margin: 0 0 30px;
+}
+
+.footer__VerticalCol {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.footer__Col {
+    flex: 25%;
+    padding: 0;
+}
+
+
+.footer__ColList {
+    cursor: pointer;
+    font-size:13px;
+    list-style: none;
+    padding-left: 0;
+    line-height: 250%;
+    letter-spacing: .5px;
+}
+.footer__ColList > a:hover, 
+.footer__Col > ul > li:hover {
+    text-decoration: underline #757575;
+}
+
+.footer__ColSpacer {
+    padding: 0 30px;
+}
+
+.footer__endLine {
+    font-size: 11px;
+    line-height: 250%;
+    margin-bottom: 20px;
+}
+.footer__copyright {
+    display: flex;
+    align-items: center;
+}
+
+.git__logo {
+    display: flex;
+    height: 20px;
+    width: 20px;
+    cursor: help;
+    filter: invert(100%);
+    margin-left: 2px;
+    
+}
+
+@media(max-width: 765px){
+    .footer{
+        width: 95%;
+    }
+
+    .footer__Col{
+        list-style: none;
+        padding: 0;  
+    }
+}
+
+@media(max-width: 440px){
+    .footer__ColList{
+        flex-direction: column;
+    }
+}

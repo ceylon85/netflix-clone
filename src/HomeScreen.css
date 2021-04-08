@@ -1,3 +1,6 @@
-.homeScreen {
- 
+.homeScreen__divide {
+    display: block;
+    width: 100%;
+    margin-top: 50px;
+    border-bottom: 8px solid #222;
 }
