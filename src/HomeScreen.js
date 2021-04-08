@@ -22,15 +22,15 @@ function HomeScreen() {
       />
       <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
       <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
-      <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
-      <Row title="Animations" fetchUrl={requests.fetchAnimations} />
-      <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
-      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
-      <Row title="Family Movies" fetchUrl={requests.fetchFamilyMovies} />
-      {/* <Row title="Fantasy Movies" fetchUrl={requests.fetchFantasyMovies} />
-      <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
+      <Row title="History Movies" fetchUrl={requests.fetchHistoryMovies} />
       <Row title="Mystery Movies" fetchUrl={requests.fetchMysteryMovies} />
-      <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} /> */}
+      <Row title="Fantasy Movies" fetchUrl={requests.fetchFantasyMovies} />
+      <Row title="Family Movies" fetchUrl={requests.fetchFamilyMovies} />
+      <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
+      <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
+      <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
+      <Row title="Animations" fetchUrl={requests.fetchAnimations} />
+      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
     </div>
   );
 }
