@@ -12,7 +12,10 @@ function App() {
     <div className="App">
       <Router>
         {!user ? (
-          <LoginScreen />
+          <Route>
+            <LoginScreen />
+            <Footer />
+          </Route>
         ) : (
           <Switch>
             <Route exact path="/">
