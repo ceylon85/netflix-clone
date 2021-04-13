@@ -10,6 +10,7 @@
     transition-timing-function: ease-in;
     transition: all 0.5s;
 }
+
 .nav__contents {
     display: flex;
     justify-content: space-between;
@@ -20,9 +21,10 @@
 .nav__black {
     background-color: black;
 }
+
 .nav__logo {
     position: fixed;
-    top:10px;
+    top: 10px;
     left: 0;
     width: 80px;
     object-fit: contain;
@@ -31,7 +33,8 @@
     margin-right: 30px;
 }
 
-.nav__left, .nav__right {
+.nav__left,
+.nav__right {
     display: flex;
     align-items: center;
 }
@@ -59,22 +62,22 @@
 .nav__right {
     position: relative;
 }
+
 .nav__avatar {
     position: fixed;
     right: 20px;
     width: 30px;
-    height: 30px;    
+    height: 30px;
     cursor: pointer;
     align-items: center;
 }
 
-@media(max-width: 900px){
-    .nav__left-navItems, 
+@media(max-width: 900px) {
+
+    .nav__left-navItems,
     .nav__right {
         display: none;
     }
 }
 
-@media(max-width: 440px){
-    
-}
+@media(max-width: 440px) {}
