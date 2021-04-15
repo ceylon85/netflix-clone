@@ -13,10 +13,13 @@ export const userSlice = createSlice({
     logout: (state) => {
       state.user = null;
     },
+    subscribe: (state, action) => {
+      state.user.subscription = action.payload;
+    },
   },
 });
 
-export const { login, logout } = userSlice.actions;
+export const { login, logout, subscribe } = userSlice.actions;
 
 // these functions below are selectors. allows to get value from state
 
