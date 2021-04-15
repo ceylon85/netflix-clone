@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "./axios";
 import "./Banner.css";
 import requests from "./Requests";
+import TypeWriter from "react-typewriter";
 
 function Banner() {
   const [movie, setMovie] = useState([]);
@@ -38,11 +39,13 @@ function Banner() {
     >
       <div className="banner__contents">
         <h1 className="banner__title">
-          {movie?.name || movie?.name || movie?.original_name}
+          <TypeWriter typing={0.5}>
+            {movie?.name || movie?.name || movie?.original_name}
+          </TypeWriter>
         </h1>
 
         <h1 className="banner__description">
-          {truncate(movie?.overview, 150)}
+          <TypeWriter typing={0.8}>{truncate(movie?.overview, 150)}</TypeWriter>
         </h1>
         <div className="banner__buttons">
           <button className="banner__button">Play</button>

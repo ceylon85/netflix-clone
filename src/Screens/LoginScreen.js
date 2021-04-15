@@ -13,7 +13,9 @@ function LoginScreen() {
           src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
           alt="bg"
         />
-        <button className="loginScreen__button">로그인</button>
+        <button onClick={() => setSignIn(true)} className="loginScreen__button">
+          로그인
+        </button>
         <div className="loginScreen__gradient" />
       </div>
 
