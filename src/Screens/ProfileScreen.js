@@ -24,7 +24,8 @@ function ProfileScreen() {
             <h2>{user.email}</h2>
             <div className="profileScreen__plans">
 
-                <h3>요금제</h3>
+                <h3>원하는 멤버십을 선택하세요.</h3>
+                {/* 현재 멤버십 프리미엄 */}
                 <PlanScreen/>
               <button
                 onClick={() => auth.signOut()}
