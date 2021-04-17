@@ -1,0 +1,46 @@
+.planScreen__plan {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    justify-content: space-between;
+    padding: 12px;
+    opacity: 0.8;
+    align-items: center;
+}
+
+.planScreen__plan:hover {
+    opacity: 1;
+}
+
+.planScreen__plan>button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 3px;
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.planScreen__block {
+    flex-basis: 10%;
+}
+
+.planScreen__name {
+    text-align: left;
+    border-right: 1px solid #ccc
+}
+
+.planScreen__resolution {
+    text-align: center;
+}
+
+
+.planScreen__quality {
+justify-self: center;
+}
+
+.planScreen__price {
+    justify-self: right;
+    margin-right: 20px;
+}

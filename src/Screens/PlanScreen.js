@@ -7,14 +7,14 @@ import { loadStripe } from "@stripe/stripe-js";
 
 function PlanScreen() {
   const [products, setProducts] = useState([]);
- // const [subscription, setSubscription] = useState(null);
+  // const [subscription, setSubscription] = useState(null);
 
   const [loading, setLoading] = useState(false);
 
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
-//요금제 가져오기
+  //요금제 가져오기
   useEffect(() => {
     setLoading(true);
     db.collection("products")
@@ -95,6 +95,11 @@ function PlanScreen() {
 
   return (
     <div className="planScreen" key={user.id}>
+        <div className="planScreen__table">
+            <h4>1</h4>
+            <h4>1</h4>
+
+        </div>
       {Object.entries(products).map(([productId, productData]) => {
         //사용자의 구독이 활성화 상태인지 확인
         const isCurrentPackage = productData.name
@@ -104,20 +109,18 @@ function PlanScreen() {
           <div className="planScreen__plan">
             <div className="planScreen__name" key={productId}>
               <h4>{productData.name}</h4>
-              {/* <h5>{productData.description}</h5> */}
             </div>
-          <div className="planScreen__block"></div>
-              <div className="planScreen__resolution">
+            <div className="planScreen__resolution">
               <h5>{productData.description}</h5>
-              </div>
+            </div>
 
             <div className="planScreen__quality">
               <h5>{productData.quality}</h5>
-              </div>
+            </div>
 
             <div className="planScreen__price">
               <h5>{productData.price}</h5>
-              </div>
+            </div>
             <button
               className={isCurrentPackage ? "plan__current" : "plan__subscribe"}
               onClick={() =>
