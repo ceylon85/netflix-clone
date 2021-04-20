@@ -46,6 +46,7 @@ function App() {
           <Switch>
             <Route path="/profile">
               <ProfileScreen />
+              <Footer />
             </Route>
             <Route exact path="/">
               <HomeScreen />

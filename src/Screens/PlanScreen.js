@@ -95,11 +95,13 @@ function PlanScreen() {
 
   return (
     <div className="planScreen" key={user.id}>
-        <div className="planScreen__table">
-            <h4>1</h4>
-            <h4>1</h4>
-
-        </div>
+      <div className="planScreen__table">
+        <h4 className="planScreen__tablename">{""}</h4>
+        <h4 className="planScreen__resolution">해상도</h4>
+        <h4 className="planScreen__quality">영상 화질</h4>
+        <h4 className="planScreen__price">월 요금</h4>
+        <h4>{""}</h4>
+      </div>
       {Object.entries(products).map(([productId, productData]) => {
         //사용자의 구독이 활성화 상태인지 확인
         const isCurrentPackage = productData.name

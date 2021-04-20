@@ -1,10 +1,30 @@
+.planScreen {
+    margin-top: 1px;
+}
+
+.planScreen__table {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-bottom: 1px solid #ccc;
+    justify-content: space-between;
+    padding: 12px;
+    opacity: 1;
+    font-size: 1rem;
+
+}
+
+.planScreen__table:hover {
+    opacity: 0.6;
+}
+
 .planScreen__plan {
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(auto-fill, minmax(20%, auto));
     justify-content: space-between;
     padding: 12px;
     opacity: 0.8;
     align-items: center;
+    font-size: 1rem;
 }
 
 .planScreen__plan:hover {
@@ -22,10 +42,6 @@
     cursor: pointer;
 }
 
-.planScreen__block {
-    flex-basis: 10%;
-}
-
 .planScreen__name {
     text-align: left;
     border-right: 1px solid #ccc
@@ -37,7 +53,7 @@
 
 
 .planScreen__quality {
-justify-self: center;
+    justify-self: center;
 }
 
 .planScreen__price {
