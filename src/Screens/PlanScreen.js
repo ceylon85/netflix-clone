@@ -4,10 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectUser, subscribe } from "../features/userSlice";
 import db from "../firebase";
 import { loadStripe } from "@stripe/stripe-js";
+import Loader from 'react-loader-spinner';
 
 function PlanScreen() {
   const [products, setProducts] = useState([]);
-  // const [subscription, setSubscription] = useState(null);
+  //const [subscription, setSubscription] = useState(null);
 
   const [loading, setLoading] = useState(false);
 
@@ -16,9 +17,8 @@ function PlanScreen() {
 
   //요금제 가져오기
   useEffect(() => {
-    setLoading(true);
     db.collection("products")
-      .where("active", "==", true)
+      .orderBy("name")
       .get()
       .then((querySnapshot) => {
         const products = {};
@@ -38,6 +38,7 @@ function PlanScreen() {
   }, []);
 
   console.log(products);
+  //console.log(subscription);
 
   useEffect(() => {
     db.collection("customers")
@@ -95,45 +96,63 @@ function PlanScreen() {
 
   return (
     <div className="planScreen" key={user.id}>
-      <div className="planScreen__table">
-        <h4 className="planScreen__tablename">{""}</h4>
-        <h4 className="planScreen__resolution">해상도</h4>
-        <h4 className="planScreen__quality">영상 화질</h4>
-        <h4 className="planScreen__price">월 요금</h4>
-        <h4>{""}</h4>
-      </div>
-      {Object.entries(products).map(([productId, productData]) => {
-        //사용자의 구독이 활성화 상태인지 확인
-        const isCurrentPackage = productData.name
-          ?.toLowerCase()
-          .includes(user.subscription?.role.toLowerCase());
-        return (
-          <div className="planScreen__plan">
-            <div className="planScreen__name" key={productId}>
-              <h4>{productData.name}</h4>
-            </div>
-            <div className="planScreen__resolution">
-              <h5>{productData.description}</h5>
-            </div>
-
-            <div className="planScreen__quality">
-              <h5>{productData.quality}</h5>
-            </div>
-
-            <div className="planScreen__price">
-              <h5>{productData.price}</h5>
-            </div>
-            <button
-              className={isCurrentPackage ? "plan__current" : "plan__subscribe"}
-              onClick={() =>
-                !isCurrentPackage && loadCheckout(productData.prices.priceId)
-              }
-            >
-              {isCurrentPackage ? "해지" : "신청"}
-            </button>
+      {loading ? (
+        <div className="planScreen__loader">
+          <Loader type="TailSpin" color=" #e50914" height={200} width={200} />
+        </div>
+      ) : (
+        <>
+          <div className="planScreen__table">
+            <h4 className="planScreen__tablename">{""}</h4>
+            <h4 className="planScreen__resolution">해상도</h4>
+            <h4 className="planScreen__quality">영상 화질</h4>
+            <h4 className="planScreen__price">월 요금</h4>
+            <h4>{""}</h4>
           </div>
-        );
-      })}
+          {Object.entries(products).map(([productId, productData]) => {
+            //사용자의 구독이 활성화 상태인지 확인
+            const isCurrentPackage = productData.role
+              ?.toLowerCase()
+              .includes(user.subscription?.role.toLowerCase());
+            return (
+              <div
+                key={productId}
+                className={`${
+                  isCurrentPackage && "planScreen__plan--disabled"
+                } planScreen__plan`}
+              >
+                <div className="planScreen__name">
+                  <h4>{productData.name}</h4>
+                </div>
+                <div className="planScreen__resolution">
+                  <h5>{productData.description}</h5>
+                </div>
+
+                <div className="planScreen__quality">
+                  <h5>{productData.quality}</h5>
+                </div>
+
+                <div className="planScreen__price">
+                  <h5>{productData.price}</h5>
+                </div>
+                <button
+                  className={
+                    isCurrentPackage
+                      ? "planScreen__current"
+                      : "planScreen__subscribe"
+                  }
+                  onClick={() =>
+                    !isCurrentPackage &&
+                    loadCheckout(productData.prices.priceId)
+                  }
+                >
+                  {isCurrentPackage ? "현재 멤버십" : "신청"}
+                </button>
+              </div>
+            );
+          })}
+        </>
+      )}
     </div>
   );
 }

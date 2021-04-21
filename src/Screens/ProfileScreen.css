@@ -2,7 +2,7 @@
     height: 100vh;
     background-color: hsl(0, 0%, 96%);
     margin-top: 5%;
-    padding-bottom: 3%;
+    padding-bottom: 5%;
 }
 
 .profileScreen>div:first-child {
@@ -36,16 +36,17 @@
     font-size: 60px;
     font-weight: 600;
     border-bottom: 1px solid #ccc;
-    margin-bottom: 20px;
 }
 
 .profileScreen__info {
     display: flex;
     justify-content: space-between;
-
+    margin-top: 10px;
 }
 
-.profileScreen__membership {}
+.profileScreen__membership {
+    margin: auto;
+}
 
 .profileScreen__membershipText {
     text-align: center;
@@ -67,7 +68,7 @@
 }
 
 .profileScreen__avatar {
-    height: 100px;
+    height: 120px;
     padding-left: 60px;
     padding-right: 60px;
 }
@@ -99,7 +100,6 @@
 
 .profileScreen__userInfoChange:hover {
     text-decoration: underline;
-
 }
 
 .profileScreen__card {
@@ -115,6 +115,30 @@
 
 .profileScreen__cardInfo2 {
     font-size: 1rem;
+}
+
+.profileScreen__paymentInfo {
+    border-top: 1px solid #fff;
+    padding-top: 2%;
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2%;
+}
+
+.profileScreen__paymentInfo1 {
+    font-size: 1rem;
+    color: rgba(65, 65, 65, 0.603);
+}
+
+.profileScreen__paymentInfo2 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: royalblue;
+}
+
+.profileScreen__paymentInfo2:hover {
+    text-decoration: underline;
 }
 
 .profileScreen__details {

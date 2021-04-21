@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
-import db, { auth } from "../firebase";
+import { auth } from "../firebase";
 import Nav from "../Nav";
 import PlanScreen from "./PlanScreen";
 import "./ProfileScreen.css";
@@ -46,12 +46,31 @@ function ProfileScreen() {
                 VISA **** **** **** 4242
               </h2>
             </div>
+            {user.subscription && (
+              <div className="profileScreen__paymentInfo">
+                <h3 className="profileScreen__paymentInfo1">
+                  다음 결제 날짜는{" "}
+                  {new Date(
+                    user.subscription?.current_period_end * 1000
+                  ).toLocaleDateString()}{" "}
+                  입니다.
+                </h3>
+                <h4 className="profileScreen__paymentInfo2">결제정보 변경</h4>
+              </div>
+            )}
           </div>
         </div>
         <div className="profileScreen__details">
           <div className="profileScreen__plans">
-            <h3>원하는 멤버십을 선택하세요.</h3>
-            {/* 현재 멤버십 프리미엄 */}
+            <h3>
+              원하는 멤버십을 선택하세요.
+              {user.subscription &&
+                `(현재 멤버십: ${
+                  user.subscription?.role.charAt(0).toUpperCase() +
+                  user.subscription?.role.slice(1)
+                })`}
+            </h3>
+
             <PlanScreen />
             <button
               onClick={() => auth.signOut()}
