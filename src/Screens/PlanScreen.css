@@ -89,3 +89,21 @@
     justify-content: center;
     align-items: center;
 }
+
+@media(max-width: 600px) {
+
+    .planScreen {
+        width: 100%;
+        font-size: 12px;
+    }
+    .planScreen__table {
+        font-size: 13px;
+    }
+    .planScreen__plan >div >h4, h5{
+        font-size: 12px;
+    }
+    .planScreen__plan>button {
+        font-size: 12px;
+        padding: 10px 0;
+    }
+}

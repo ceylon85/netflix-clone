@@ -18,19 +18,31 @@
     margin: auto;
 }
 
+.nav__contents svg {
+    font-size: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.nav__right-kids {
+    font-size: 15px;
+    margin-right: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
 .nav__black {
     background-color: black;
 }
 
 .nav__logo {
     position: fixed;
-    top: 10px;
+    top: 1.3%;
     left: 0;
-    width: 80px;
+    width: 100px;
     object-fit: contain;
-    padding-left: 20px;
+    padding-left: 15px;
     cursor: pointer;
-    margin-right: 30px;
 }
 
 .nav__left,
@@ -63,21 +75,107 @@
     position: relative;
 }
 
+.nav__right-profile {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
 .nav__avatar {
-    position: fixed;
-    right: 20px;
     width: 30px;
     height: 30px;
     cursor: pointer;
+    margin-right: 5px;
+    border-radius: 4px;
+}
+
+.nav__account-dropdown {
+    position: absolute;
+    right: 12%;
+    top: 48px;
+    width: 181px;
+    margin-left: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, .85);
+    z-index: 1000;
+}
+
+.nav__dropdown-profiles {
+    list-style: none;
+    padding: 6px;
+}
+
+.nav__dropdown-profile {
+    display: flex;
     align-items: center;
+    color: #fff;
+    padding: 5px 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.nav__dropdown-profile>img {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.nav__dropdown-profile>p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.nav__dropdown-manage {
+    border-bottom: .8px solid rgba(255, 255, 255, 0.4);
+}
+
+.nav__dropdown-manage>p {
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    opacity: 0.8;
+}
+
+.nav__dropdown-manage>p:hover {
+    text-decoration: underline;
+}
+
+.nav__dropdown-account {
+    list-style: none;
+    padding: 7px;
+    opacity: 0.8;
+
+}
+
+.nav__account-dropdown li {
+    color: #fff;
+    font-size: 14px;
+    padding: 4px 11px;
+
+}
+
+.nav__account-dropdown li:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 @media(max-width: 900px) {
-
-    .nav__left-navItems,
-    .nav__right {
+    .nav__left-navItems {
         display: none;
     }
 }
 
-@media(max-width: 440px) {}
+/* .nav__right  */
+@media(max-width: 640px) {
+    .nav__right>svg {
+        display: none;
+    }
+
+    .nav__right-kids {
+        display: none;
+    }
+}

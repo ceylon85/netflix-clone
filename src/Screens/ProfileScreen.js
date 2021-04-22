@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import { auth } from "../firebase";
+import Footer from "../Footer/Footer";
 import Nav from "../Nav";
 import PlanScreen from "./PlanScreen";
 import "./ProfileScreen.css";
@@ -11,14 +12,16 @@ function ProfileScreen() {
   console.log("auth user===> ", user);
   return (
     <div className="profileScreen">
-      <Nav />
+      <div className="profileScreen__nav">
+        <Nav />
+      </div>
       <div className="profileScreen__body">
         <h1 className="profileScreen__title">계정</h1>
         <div className="profileScreen__info">
           <div className="profileScreen__membership">
             <img
               className="profileScreen__avatar"
-              src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+              src="https://occ-0-325-395.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABZ2mdn_92ruEqx0QzXDv947nXRyeamVpcKT4xbR6N-51JGWihqgKLLIX9gO_E319FW3Qoqff4ujjappyQ8uskyFS6Q.png?r=a41"
               alt="avatar"
             />
             <h3 className="profileScreen__membershipText">
@@ -48,14 +51,14 @@ function ProfileScreen() {
             </div>
             {user.subscription && (
               <div className="profileScreen__paymentInfo">
-                <h3 className="profileScreen__paymentInfo1">
+                <h2 className="profileScreen__paymentInfo1">
                   다음 결제 날짜는{" "}
                   {new Date(
                     user.subscription?.current_period_end * 1000
                   ).toLocaleDateString()}{" "}
                   입니다.
-                </h3>
-                <h4 className="profileScreen__paymentInfo2">결제정보 변경</h4>
+                </h2>
+                <h2 className="profileScreen__paymentInfo2">결제정보 변경</h2>
               </div>
             )}
           </div>
@@ -80,6 +83,9 @@ function ProfileScreen() {
             </button>
           </div>
         </div>
+      </div>
+      <div className="profileScreenFooter">
+        <Footer />
       </div>
     </div>
   );

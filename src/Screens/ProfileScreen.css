@@ -1,25 +1,25 @@
 .profileScreen {
     height: 100vh;
-    background-color: hsl(0, 0%, 96%);
-    margin-top: 5%;
+    background-color: #fff;
+    margin-top: 5.5%;
     padding-bottom: 5%;
 }
 
-.profileScreen>div:first-child {
+.profileScreen__nav>div {
     background-color: black;
 }
 
-.profileScreen>div>div:first-child {
-    position: fixed;
-    right: 20px;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    align-items: center;
+.profileScreen__nav>div>div>div>ul {
+    display: none;
 }
 
-.profileScreen>div>div>div>ul {
-    display: none;
+.profileScreenFooter {
+    width: 100%;
+    background-color: black;
+}
+
+.profileScreen>div:nth-child(3) {
+    margin-top: 25px;
 }
 
 .profileScreen__body {
@@ -64,7 +64,6 @@
     border-radius: 3px;
     cursor: pointer;
     font-weight: 600;
-
 }
 
 .profileScreen__avatar {
@@ -170,4 +169,62 @@
     margin-top: 15px;
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
+}
+
+@media(max-width: 1036px) {
+    .profileScreen__body {
+        width: 80%;
+    }
+}
+
+@media(max-width: 880px) {
+    .profileScreen__body {
+        width: 95%;
+    }
+
+    .profileScreen__body>h1 {
+        margin-top: 32px;
+    }
+}
+
+@media(max-width: 767px) {
+    .profileScreen__membership {
+        margin-bottom: 32px;
+        margin-top: 22px;
+    }
+}
+
+@media(max-width: 600px) {
+    .profileScreen__info {
+        flex-direction: column;
+    }
+
+    .profileScreen__membership {
+        margin: auto;
+        margin-bottom: 3%;
+    }
+
+    .profileScreen__userInfo {
+        margin: auto;
+        width: 80%;
+    }
+
+    .profileScreen__details {
+        width: 85%;
+        margin: auto;
+        font-size: 13px;
+    }
+
+    .profileScreen__body>h1 {
+        font-size: 3rem;
+        text-align: center;
+        margin-top: 10%;
+    }
+
+    .profileScreen__card h2,
+    .profileScreen__paymentInfo>h2,
+    .profileScreen__userInfoRow>h2,
+    .profileScreen__userInfoRow>p {
+        font-size: 13px;
+    }
 }

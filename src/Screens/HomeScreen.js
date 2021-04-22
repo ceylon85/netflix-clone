@@ -4,6 +4,7 @@ import Nav from "../Nav";
 import Banner from "../Banner";
 import Row from "../Row";
 import requests from "../Requests";
+import Footer from "../Footer/Footer";
 
 function HomeScreen() {
   return (
@@ -32,6 +33,7 @@ function HomeScreen() {
       <Row title="Animations" fetchUrl={requests.fetchAnimations} />
       <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
     <div className="homeScreen__divide"></div>
+    <Footer/>
     </div>
   );
 }
