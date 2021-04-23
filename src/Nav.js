@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useHistory } from "react-router";
 import "./Nav.css";
 import { auth } from "./firebase";
@@ -13,6 +13,10 @@ import {
 function Nav() {
   const [show, setShow] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+
+  const [input, setInput] = useState("");
+  const [searchOpen, setSearchOpen] = useState(false);
+  const inputEl = useRef(null);
 
   const history = useHistory();
 
@@ -37,6 +41,21 @@ function Nav() {
     return () => window.removeEventListener("scroll", transitionNavBar);
   }, []);
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setSearchOpen(false);
+    inputEl.current.blur();
+    setTimeout(() => setInput(""), 100);
+  };
+
+  const searchClick = () => {
+    setSearchOpen(true);
+    setTimeout(() => {
+      inputEl.current.focus();
+    }, 300);
+  };
+
   return (
     <div className={`nav ${show && "nav__black"}`}>
       <div className="nav__contents">
@@ -44,7 +63,7 @@ function Nav() {
           <img
             onClick={() => history.push("/")}
             className="nav__logo"
-            src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" 
+            src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
             alt="main_logo"
           />
           <ul className="nav__left-navItems">
@@ -57,7 +76,28 @@ function Nav() {
           </ul>
         </div>
         <div className="nav__right">
-          <FontAwesomeIcon icon={faSearch} color="white" />
+          <div
+            className={`nav__right-search ${searchOpen || input ? "open" : ""}`}
+            onClick={searchClick}
+          >
+            <FontAwesomeIcon
+              icon={faSearch}
+              color="white"
+              className="nav__right-searchIcon"
+              onClick={searchClick}
+            />
+            <form>
+              <input
+                ref={inputEl}
+                type="search"
+                value={input}
+                onBlur={() => setSearchOpen(false)}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Search..."
+              />
+              <button onClick={(e) => handleSearch(e)} type="submit"></button>
+            </form>
+          </div>
           <div className="nav__right-kids">키즈</div>
           <FontAwesomeIcon icon={faGift} color="white" />
           <FontAwesomeIcon icon={faBell} color="white" />
@@ -104,12 +144,9 @@ function Nav() {
                     />
                     <p>키즈</p>
                   </li>
-                
                 </ul>
                 <div className="nav__dropdown-manage">
-                  <p onClick={() => history.push("/manage")}>
-                    프로필 관리
-                  </p>
+                  <p onClick={() => history.push("/manage")}>프로필 관리</p>
                 </div>
                 <ul className="nav__dropdown-account">
                   <li onClick={() => history.push("/profile")}>계정</li>
