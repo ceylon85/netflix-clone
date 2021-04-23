@@ -21,10 +21,11 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
 
   return (
     <div className="row">
+      <div className="rows">
       <h2>{title}</h2>
 
       <div className="row__posters">
-        {movies.map(
+        {movies.slice(0,12).map(
           (movie) =>
             ((isLargeRow && movie.poster_path) ||
             (!isLargeRow && movie.backdrop_path)) && (
@@ -39,6 +40,7 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
             )
         )}
       </div>
+    </div>
     </div>
   );
 }
