@@ -55,8 +55,7 @@
     z-index: 1;
 }
 
-
-.profileManage__profile >svg{
+.profileManage__profile>svg {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -68,7 +67,7 @@
     z-index: 1;
 }
 
-.profileManage__profile >h3{
+.profileManage__profile>h3 {
     position: absolute;
     left: 50%;
     bottom: -30px;
@@ -78,18 +77,18 @@
     font-size: 1rem;
 }
 
-@media(max-width: 960px){
-    .profileManage__profiles{
+@media(max-width: 960px) {
+    .profileManage__profiles {
         width: 90%;
         flex-wrap: wrap;
     }
-    .profileManage__profile{
+    .profileManage__profile {
         margin: 30px 10px;
     }
 }
 
-@media(max-width:600px){
-    .profileManage__body{
+@media(max-width:600px) {
+    .profileManage__body {
         padding-bottom: 50px;
     }
 }

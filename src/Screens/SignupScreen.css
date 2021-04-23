@@ -47,6 +47,7 @@
     color: #b3b3b3;
     align-items: center;
 }
+
 .signupScreen__check>label {
     font-size: 13px;
     font-weight: 500;
@@ -62,7 +63,6 @@
     margin-top: -2px;
 }
 
-
 .signupScreen>form>h4 {
     text-align: left;
 }
@@ -73,8 +73,7 @@
     font-weight: 400;
 }
 
-.signupScreen__link:hover{
+.signupScreen__link:hover {
     cursor: pointer;
     text-decoration: underline;
-
 }

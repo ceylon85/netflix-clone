@@ -10,7 +10,6 @@
     padding: 12px;
     opacity: 1;
     font-size: 1rem;
-
 }
 
 .planScreen__table:hover {
@@ -51,7 +50,6 @@
     text-align: center;
 }
 
-
 .planScreen__quality {
     justify-self: center;
 }
@@ -61,7 +59,7 @@
     margin-right: 20px;
 }
 
-.planScreen__subscribe{
+.planScreen__subscribe {
     padding: 10px 20px;
     background-color: #e50914;
     border: none;
@@ -72,7 +70,7 @@
     font-weight: 600;
 }
 
-.planScreen__current{
+.planScreen__current {
     padding: 10px 20px;
     background-color: gray;
     font-size: 1rem;
@@ -82,7 +80,7 @@
     border: none;
 }
 
-.planScreen__loader{
+.planScreen__loader {
     width: 100%;
     height: 100%;
     display: flex;
@@ -91,7 +89,6 @@
 }
 
 @media(max-width: 600px) {
-
     .planScreen {
         width: 100%;
         font-size: 12px;
@@ -99,7 +96,7 @@
     .planScreen__table {
         font-size: 13px;
     }
-    .planScreen__plan >div >h4, h5{
+    .planScreen__plan>div>h4, h5 {
         font-size: 12px;
     }
     .planScreen__plan>button {
