@@ -44,7 +44,7 @@ function Nav() {
           <img
             onClick={() => history.push("/")}
             className="nav__logo"
-            src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
+            src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" 
             alt="main_logo"
           />
           <ul className="nav__left-navItems">
@@ -76,13 +76,13 @@ function Nav() {
                 onMouseLeave={handleDropdown}
               >
                 <ul className="nav__dropdown-profiles">
-                  <li className="nav__dropdown-profile">
+                  {/* <li className="nav__dropdown-profile">
                     <img
                       src="https://occ-0-325-395.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABZ2mdn_92ruEqx0QzXDv947nXRyeamVpcKT4xbR6N-51JGWihqgKLLIX9gO_E319FW3Qoqff4ujjappyQ8uskyFS6Q.png?r=a41"
                       alt=""
                     />
                     <p>Profile 1</p>
-                  </li>
+                  </li> */}
                   <li className="nav__dropdown-profile">
                     <img
                       src="https://occ-0-325-395.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABYgoIFuP4_E0zjNm4v8w6iCy69xVG0gEJgeLjbl7VR3GBolfveZOeKR0RXL1sHzRdidE4Prff-FSWhZmRICew4Zm9Q.png?r=f71"
@@ -102,7 +102,7 @@ function Nav() {
                       src="https://occ-0-325-395.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABQ_5NlU6oiEjm2-0Nq0k3GkoO5x3lSaB4zMq2ggg-NHsLQa5QTAGV3J_Gn2C27_1zzCXwkBxggt4Syl00Z2NqFsQnQ.png?r=fcd"
                       alt=""
                     />
-                    <p>Profile 4</p>
+                    <p>키즈</p>
                   </li>
                 
                 </ul>

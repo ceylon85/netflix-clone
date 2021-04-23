@@ -1,0 +1,95 @@
+.profileManage {
+    min-height: 100vh;
+}
+
+.profileManage__nav>div {
+    background-color: black;
+    z-index: 2;
+}
+
+.profileManage__body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding-top: 150px;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.profileManage__title {
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.profileManage__profiles {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    max-width: 980px;
+    margin-top: 40px;
+}
+
+.profileManage__profile {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.profileManage__avatarOpacity {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+
+.profileManage__profile >svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 9px;
+    z-index: 1;
+}
+
+.profileManage__profile >h3{
+    position: absolute;
+    left: 50%;
+    bottom: -30px;
+    transform: translateX(-50%);
+    color: white;
+    opacity: 0.8;
+    font-size: 1rem;
+}
+
+@media(max-width: 960px){
+    .profileManage__profiles{
+        width: 90%;
+        flex-wrap: wrap;
+    }
+    .profileManage__profile{
+        margin: 30px 10px;
+    }
+}
+
+@media(max-width:600px){
+    .profileManage__body{
+        padding-bottom: 50px;
+    }
+}
