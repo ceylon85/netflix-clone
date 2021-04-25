@@ -43,3 +43,16 @@
     transform: scale(1.09);
     opacity: 1;
 }
+
+@media(max-width: 765px) {
+    .rows>h2{
+        font-size: 1.2rem;
+    }
+
+    .row__poster{
+        max-height: 90px;
+    }
+    .row__posterLarge {
+        max-height: 210px;
+    }
+}

@@ -49,3 +49,10 @@
     background-color: #e6e6e6;
     transition: all 0.2s;
 }
+
+
+@media(max-width: 765px) {
+    .banner__title{
+        font-size: 2.7rem;
+    }
+}
