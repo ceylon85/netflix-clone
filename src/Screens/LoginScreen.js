@@ -21,7 +21,7 @@ function LoginScreen() {
 
       <div className="loginScreen__body">
         {signIn ? (
-          <SignupScreen />
+          <SignupScreen className="loginScreen__body2"/>
         ) : (
           <>
             <h1>

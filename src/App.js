@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login, logout, selectUser } from "./features/userSlice";
 import ProfileScreen from "./Screens/ProfileScreen";
 import ProfileManage from "./Screens/ProfileManage";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   const user = useSelector(selectUser);
@@ -36,6 +37,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+      <ScrollToTop/>
         {!user ? (
           <Route>
             <LoginScreen />
