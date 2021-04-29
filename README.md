@@ -55,8 +55,8 @@ test_Pw : 123456
 페이지 이동시 스크롤이 변경 된 상태로 있음 상태
 
 `해결`   
- ScrollToTop.js 를 만들어 App.js에 있는 Router 아래에 위치 페이지가 렌더링 될 때마다 Scroll의 값을 (0,0)으로 고정시켰다.
-
+ ScrollToTop.js 를 만들어 페이지가 렌더링 될 때마다 Scroll의 값을 (0,0)으로 고정시켰다.
+ 
 ```js
 //페이지 렌더링 시 스크롤을 가장 상단에 고정
 import { useEffect } from "react";
@@ -72,5 +72,6 @@ export default function ScrollToTop() {
   return null;
 }
 ```
+위치는 App.js에 있는 Router 아래에 위치시킴
 
 
